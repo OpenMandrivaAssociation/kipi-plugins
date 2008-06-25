@@ -2,7 +2,7 @@
 
 Name: kipi-plugins
 Version: 0.2.0
-Release: %mkrel 0.%rev.1
+Release: %mkrel 0.%rev.2
 Summary: KDE image Interface Plugins
 License: GPLv2+
 Group: System/Libraries
@@ -26,6 +26,7 @@ BuildRequires: libgphoto-devel
 BuildRequires: imlib2-devel 
 BuildRequires: libxml2-utils
 BuildRequires: libmesaglu-devel
+Conflicts: %{_lib}kipi-plugins0
 
 %description
  The library of the KDE Image Plugin Interface.  
@@ -51,6 +52,7 @@ BuildRequires: libmesaglu-devel
 Summary:	Library files for %{name}
 Group:		System/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Conflicts: %{_lib}kipi-plugins0
 
 %description -n %lib_name
 Library files for %{name}
