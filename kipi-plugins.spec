@@ -18,8 +18,7 @@ BuildRequires: kde4-macros
 BuildRequires: kdelibs4-devel
 BuildRequires: libkipi-devel
 BuildRequires: libgpod-devel
-BuildRequires: libkexiv2-devel
-BuildRequires: libkdcraw-devel
+BuildRequires: kdegraphics4-devel
 BuildRequires: tiff-devel 
 BuildRequires: libMagick-devel 
 BuildRequires: libxslt-devel
@@ -37,17 +36,16 @@ BuildRequires: libmesaglu-devel
 
 %files
 %defattr(-,root,root)
-%doc AUTHORS COPYING ChangeLog README TODO
-%_kde_bindir/images2mpg
-%{_kde_datadir}/doc/HTML/*
+%doc README
 %{_kde_datadir}/apps/*
-%{_kde_datadir}/config.kcfg/*
-%{_kde_datadir}/services/kde4/*
+%{_kde_libdir}/kde4/kipiplugin_*
+%{_kde_iconsdir}/*/*/*/*
+%{_kde_datadir}/kde4/services/kipiplugin_*
 
 #----------------------------------------------------------------------------
 
-%define major 2
-%define lib_name %mklibname kipi %major
+%define major 1
+%define lib_name %mklibname kipiplugins %major
 
 %package -n %lib_name
 Summary:	Library files for %{name}
@@ -62,23 +60,19 @@ Library files for %{name}
 
 %files -n %lib_name
 %defattr(-,root,root)
-%{_kde_libdir}/kde3/kipiplugin_*
 %{_kde_libdir}/libkipiplugins.so.*
 
 #----------------------------------------------------------------------------
 
-%define lib_dev %mklibname kipi -d
+%package devel
+Summary: Development files for %{name}
+Group: Development/C
+Requires: %{lib_name} = %{epoch}:%{version}-%{release}
 
-%package -n %lib_dev
-Summary:	Development files for %{name}
-Group:		Development/C
-Requires:	%{lib_name} = %{epoch}:%{version}-%{release}
-Provides:	%{name}-devel = %{epoch}:%{version}-%{release}
-
-%description -n %lib_dev
+%description devel
 Development files for %{name}
 
-%files -n %lib_dev
+%files devel
 %defattr(-,root,root)
 %{_kde_libdir}/*.so
 
