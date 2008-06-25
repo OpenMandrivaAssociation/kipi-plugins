@@ -44,8 +44,8 @@ BuildRequires: libmesaglu-devel
 
 #----------------------------------------------------------------------------
 
-%define major 1
-%define lib_name %mklibname kipiplugins %major
+%define kipiplugins_major 1
+%define lib_name %mklibname kipiplugins %kipiplugins_major
 
 %package -n %lib_name
 Summary:	Library files for %{name}
@@ -60,7 +60,7 @@ Library files for %{name}
 
 %files -n %lib_name
 %defattr(-,root,root)
-%{_kde_libdir}/libkipiplugins.so.*
+%{_kde_libdir}/libkipiplugins.so.%{kipiplugins_major}*
 
 #----------------------------------------------------------------------------
 
