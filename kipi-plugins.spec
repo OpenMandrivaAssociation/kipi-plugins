@@ -70,6 +70,7 @@ Library files for %{name}
 Summary: Development files for %{name}
 Group: Development/C
 Requires: %{lib_name} = %{epoch}:%{version}-%{release}
+Conflicts: %{_lib}kipi-plugins-devel < 1:0.2.0
 
 %description devel
 Development files for %{name}
