@@ -1,12 +1,12 @@
-%define rev 824094
+%define rev beta1
 
 Name: kipi-plugins
 Version: 0.2.0
-Release: %mkrel 0.%rev.3
+Release: %mkrel 1.%rev.3
 Summary: KDE image Interface Plugins
 License: GPLv2+
 Group: System/Libraries
-Source0: %{name}-%{version}.%rev.tar.bz2
+Source0: %{name}-%{version}-%rev.tar.bz2
 URL: http://www.kipi-plugins.org
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Epoch: 1
@@ -82,7 +82,7 @@ Development files for %{name}
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q 
+%setup -q -n %{name}-%{version}-%{rev} 
 
 %build
 %cmake_kde4
