@@ -1,8 +1,8 @@
-%define rev beta1
+%define rev beta3
 
 Name: kipi-plugins
 Version: 0.2.0
-Release: %mkrel 1.%rev.4
+Release: %mkrel 1.%rev.1
 Summary: KDE image Interface Plugins
 License: GPLv2+
 Group: System/Libraries
@@ -42,6 +42,43 @@ Obsoletes:     %{_lib}kipi-plugins0 < 1:0.2.0-0.824094.3
 %{_kde_libdir}/kde4/kipiplugin_*
 %{_kde_iconsdir}/*/*/*/*
 %{_kde_datadir}/kde4/services/kipiplugin_*
+%lang(be) %_datadir/locale/be/*
+%lang(ar) %_datadir/locale/ar/*
+%lang(ca) %_datadir/locale/ca/*
+%lang(da) %_datadir/locale/da/*
+%lang(de) %_datadir/locale/de/*
+%lang(cs) %_datadir/locale/cs/*
+%lang(el) %_datadir/locale/el/*
+%lang(es) %_datadir/locale/es/*
+%lang(et) %_datadir/locale/et/*
+%lang(ga) %_datadir/locale/ga/*
+%lang(fr) %_datadir/locale/fr/*
+%lang(gl) %_datadir/locale/gl/*
+%lang(hi) %_datadir/locale/hi/*
+%lang(ja) %_datadir/locale/ja/*
+%lang(it) %_datadir/locale//it/*
+%lang(km) %_datadir/locale/km/*
+%lang(lv) %_datadir/locale/lv/*
+%lang(nb) %_datadir/locale/nb/*
+%lang(ms) %_datadir/locale/ms/*
+%lang(nl) %_datadir/locale/nl/*
+%lang(nn) %_datadir/locale/nn/*
+%lang(oc) %_datadir/locale/oc/*
+%lang(pa) %_datadir/locale/pa/*
+%lang(pl) %_datadir/locale/pl/*
+%lang(pt) %_datadir/locale/pt/*
+%lang(ro) %_datadir/locale/ro/*
+%lang(se) %_datadir/locale/se/*
+%lang(ru) %_datadir/locale/ru/*
+%lang(sk) %_datadir/locale/sk/*
+%lang(th) %_datadir/locale/th/*
+%lang(sv) %_datadir/locale/sv/*
+%lang(tr) %_datadir/locale/tr/*
+%_datadir/locale/uk/*
+%lang(nds) %_datadir/locale/nds/*
+%lang(pt_BR) %_datadir/locale/pt_BR/*
+%lang(zh_CN) %_datadir/locale/zh_CN/*
+
 
 #----------------------------------------------------------------------------
 
