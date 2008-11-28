@@ -1,4 +1,4 @@
-%define rev beta3
+%define rev beta4
 
 Name: kipi-plugins
 Version: 0.2.0
@@ -26,6 +26,7 @@ BuildRequires: libgphoto-devel
 BuildRequires: imlib2-devel 
 BuildRequires: libxml2-utils
 BuildRequires: libmesaglu-devel
+BuildRequires: opencv-devel
 Obsoletes:     %{_lib}kipi-plugins0 < 1:0.2.0-0.824094.3
 
 %description
@@ -38,6 +39,8 @@ Obsoletes:     %{_lib}kipi-plugins0 < 1:0.2.0-0.824094.3
 %files -f %name.lang
 %defattr(-,root,root)
 %doc README
+%{_kde_bindir}/dngconverter
+%{_kde_datadir}/applications/kde4/dngconverter.desktop
 %{_kde_datadir}/apps/*
 %{_kde_libdir}/kde4/kipiplugin_*
 %{_kde_iconsdir}/*/*/*/*
