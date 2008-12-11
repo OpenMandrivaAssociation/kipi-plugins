@@ -13,7 +13,7 @@ Epoch: 1
 Requires: mjpegtools 
 Requires: vorbis-tools 
 Requires: mpg123
-Requires: ImageMagick >= 5.5.4
+Requires: imagemagick >= 5.5.4
 BuildRequires: kde4-macros
 BuildRequires: kdelibs4-devel
 BuildRequires: libkipi-devel
