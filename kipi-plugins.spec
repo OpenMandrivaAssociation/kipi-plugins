@@ -1,4 +1,4 @@
-%define rev beta4
+%define rev beta5
 
 Name: kipi-plugins
 Version: 0.2.0
