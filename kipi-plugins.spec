@@ -2,12 +2,13 @@
 
 Name: kipi-plugins
 Version: 0.2.0
-Release: %mkrel 1.%rev.1
+Release: %mkrel 1.%rev.2
 Summary: KDE image Interface Plugins
 License: GPLv2+
 Group: System/Libraries
 Source0: http://downloads.sourceforge.net/kipi/%{name}-%{version}-%{rev}.tar.bz2
 Patch0:  advancedslideshow_qt45.patch 
+Patch1:  kipi-plugins-0.2.0-enable-printimage.patch
 URL: http://www.kipi-plugins.org
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Epoch: 1
@@ -88,7 +89,7 @@ Development files for %{name}
 %prep
 %setup -q -n %{name}-%{version}-%{rev} 
 %patch0 -p0
-
+%patch1 -p1
 %build
 %cmake_kde4
 %make
