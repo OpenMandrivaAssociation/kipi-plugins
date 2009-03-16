@@ -1,13 +1,10 @@
-%define rev rc2
-
 Name: kipi-plugins
 Version: 0.2.0
-Release: %mkrel 1.%rev.2
+Release: %mkrel 2
 Summary: KDE image Interface Plugins
 License: GPLv2+
 Group: System/Libraries
-Source0: http://downloads.sourceforge.net/kipi/%{name}-%{version}-%{rev}.tar.bz2
-Patch0:  advancedslideshow_qt45.patch 
+Source0: http://downloads.sourceforge.net/kipi/%{name}-%{version}.tar.bz2
 Patch1:  kipi-plugins-0.2.0-enable-printimage.patch
 URL: http://www.kipi-plugins.org
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -29,6 +26,7 @@ BuildRequires: imlib2-devel
 BuildRequires: libxml2-utils
 BuildRequires: libmesaglu-devel
 BuildRequires: opencv-devel
+BuildRequires: kdepimlibs4-devel
 Obsoletes:     %{_lib}kipi-plugins0 < 1:0.2.0-0.824094.3
 
 %description
@@ -87,9 +85,7 @@ Development files for %{name}
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q -n %{name}-%{version}-%{rev} 
-%patch0 -p0
-%patch1 -p1
+%setup -q -n %{name}-%{version} 
 %build
 %cmake_kde4
 %make
