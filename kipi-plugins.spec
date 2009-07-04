@@ -1,12 +1,10 @@
 Name: kipi-plugins
 Version: 0.4.0
-Release: %mkrel 1
+Release: %mkrel 2
 Summary: KDE image Interface Plugins
 License: GPLv2+
 Group: System/Libraries
 Source0: http://downloads.sourceforge.net/kipi/%{name}-%{version}.tar.bz2
-Patch1:  kipi-plugins-0.2.0-enable-printimage.patch
-Patch2:  kipi-plugins-0.3.0-t972401-fix-printwizard-crash.patch
 URL: http://www.kipi-plugins.org
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Epoch: 1
@@ -87,7 +85,6 @@ Development files for %{name}
 
 %prep
 %setup -q -n %{name}-%{version} 
-%patch2 -p0
 %build
 %cmake_kde4
 %make
