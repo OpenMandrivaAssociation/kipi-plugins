@@ -1,6 +1,6 @@
 Name: kipi-plugins
-Version: 0.7.0
-Release: %mkrel 2
+Version: 0.8.0
+Release: %mkrel 1
 Summary: KDE image Interface Plugins
 License: GPLv2+
 Group: System/Libraries
@@ -39,6 +39,8 @@ Obsoletes:     %{_lib}kipi-plugins0 < 1:0.2.0-0.824094.3
 %defattr(-,root,root)
 %doc README
 %{_kde_bindir}/dngconverter
+%{_kde_bindir}/scangui
+%{_kde_datadir}/applications/kde4/scangui.desktop
 %{_kde_datadir}/applications/kde4/dngconverter.desktop
 %{_kde_datadir}/applications/kde4/kipiplugins.desktop
 %{_kde_datadir}/apps/*
@@ -59,9 +61,6 @@ Conflicts: %{_lib}kipi-plugins0
 
 %description -n %lib_name
 Library files for %{name}
-
-%post -n %lib_name -p /sbin/ldconfig
-%postun -n %lib_name -p /sbin/ldconfig
 
 %files -n %lib_name
 %defattr(-,root,root)
@@ -86,6 +85,7 @@ Development files for %{name}
 
 %prep
 %setup -q -n %{name}-%{version} 
+
 %build
 %cmake_kde4
 %make
