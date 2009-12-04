@@ -1,6 +1,6 @@
 Name: kipi-plugins
-Version: 0.8.0
-Release: %mkrel 2
+Version: 0.9.0
+Release: %mkrel 1
 Summary: KDE image Interface Plugins
 License: GPLv2+
 Group: System/Libraries
@@ -33,13 +33,17 @@ Obsoletes:     %{_lib}kipi-plugins0 < 1:0.2.0-0.824094.3
 
  Libkipi allows image applications to use a plugin architecture 
  for additional functionality  such as: RawConverter, SlideShow, 
- MpegEncoder, ImagesGallery, PrintWizard, CdArchiving...
+ ImagesGallery, HTMLExport, PrintAssistant...
 
 %files -f %name.lang
 %defattr(-,root,root)
 %doc README
 %{_kde_bindir}/dngconverter
 %{_kde_bindir}/scangui
+%dir %{_kde_datadir}/doc/%{name}/htmlexport
+%{_kde_datadir}/doc/%{name}/htmlexport/THEME_HOWTO
+%dir %{_kde_datadir}/doc/%{name}/printimages
+%{_kde_datadir}/doc/%{name}/printimages/TEMPLATE_HOWTO
 %{_kde_datadir}/applications/kde4/scangui.desktop
 %{_kde_datadir}/applications/kde4/dngconverter.desktop
 %{_kde_datadir}/applications/kde4/kipiplugins.desktop
@@ -93,6 +97,15 @@ Development files for %{name}
 %install
 rm -rf %buildroot
 %makeinstall_std -C build
+
+install -d %{buildroot}/%{_kde_datadir}/doc/%{name}/htmlexport/
+install -d %{buildroot}/%{_kde_datadir}/doc/%{name}/printimages/
+install -m644 %{buildroot}/%{_kde_datadir}/apps/kipiplugin_htmlexport/THEME_HOWTO -D %{buildroot}/%{_kde_datadir}/doc/%{name}/htmlexport/THEME_HOWTO
+install -m644 %{buildroot}/%{_kde_datadir}/apps/kipiplugin_printimages/TEMPLATE_HOWTO -D %{buildroot}/%{_kde_datadir}/doc/%{name}/printimages/TEMPLATE_HOWTO
+
+#removing wrong files
+rm -f %{buildroot}/%{_kde_datadir}/apps/kipiplugin_htmlexport/THEME_HOWTO
+rm -f %{buildroot}/%{_kde_datadir}/apps/kipiplugin_printimages/TEMPLATE_HOWTO
 
 %find_lang %name --all-name
 
