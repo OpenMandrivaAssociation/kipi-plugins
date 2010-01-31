@@ -40,13 +40,13 @@ ImagesGallery, HTMLExport, PrintAssistant...
 %doc README
 %{_kde_bindir}/dngconverter
 %{_kde_bindir}/scangui
-%dir %{_kde_datadir}/doc/%{name}/htmlexport
-%{_kde_datadir}/doc/%{name}/htmlexport/THEME_HOWTO
-%dir %{_kde_datadir}/doc/%{name}/printimages
-%{_kde_datadir}/doc/%{name}/printimages/TEMPLATE_HOWTO
+%{_kde_bindir}/expoblending
+%{_kde_docdir}/%{name}/htmlexport
+%{_kde_docdir}/%{name}/printimages
 %{_kde_datadir}/applications/kde4/scangui.desktop
 %{_kde_datadir}/applications/kde4/dngconverter.desktop
 %{_kde_datadir}/applications/kde4/kipiplugins.desktop
+%{_kde_datadir}/applications/kde4/expoblending.desktop
 %{_kde_datadir}/apps/*
 %{_kde_libdir}/kde4/kipiplugin_*
 %{_kde_iconsdir}/*/*/*/*
