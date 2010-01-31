@@ -1,6 +1,6 @@
 Name: kipi-plugins
-Version: 1.0.0
-Release: %mkrel 2
+Version: 1.1.0
+Release: %mkrel 1
 Summary: KDE image Interface Plugins
 License: GPLv2+
 Group: System/Libraries
@@ -8,8 +8,8 @@ Source0: http://downloads.sourceforge.net/kipi/%{name}-%{version}.tar.bz2
 URL: http://www.kipi-plugins.org
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Epoch: 1
-Requires: mjpegtools 
-Requires: vorbis-tools 
+Requires: mjpegtools
+Requires: vorbis-tools
 Requires: mpg123
 Requires: imagemagick >= 5.5.4
 BuildRequires: kde4-macros
@@ -17,11 +17,11 @@ BuildRequires: kdelibs4-devel
 BuildRequires: libkipi-devel
 BuildRequires: libgpod-devel
 BuildRequires: kdegraphics4-devel
-BuildRequires: tiff-devel 
-BuildRequires: libMagick-devel 
+BuildRequires: tiff-devel
+BuildRequires: libMagick-devel
 BuildRequires: libxslt-devel
-BuildRequires: libgphoto-devel 
-BuildRequires: imlib2-devel 
+BuildRequires: libgphoto-devel
+BuildRequires: imlib2-devel
 BuildRequires: libxml2-utils
 BuildRequires: libmesaglu-devel
 BuildRequires: opencv-devel
@@ -29,11 +29,11 @@ BuildRequires: kdepimlibs4-devel
 Obsoletes:     %{_lib}kipi-plugins0 < 1:0.2.0-0.824094.3
 
 %description
- The library of the KDE Image Plugin Interface.  
+The library of the KDE Image Plugin Interface.
 
- Libkipi allows image applications to use a plugin architecture 
- for additional functionality  such as: RawConverter, SlideShow, 
- ImagesGallery, HTMLExport, PrintAssistant...
+Libkipi allows image applications to use a plugin architecture
+for additional functionality  such as: RawConverter, SlideShow, 
+ImagesGallery, HTMLExport, PrintAssistant...
 
 %files -f %name.lang
 %defattr(-,root,root)
