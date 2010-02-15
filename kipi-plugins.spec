@@ -1,6 +1,6 @@
 Name: kipi-plugins
 Version: 1.1.0
-Release: %mkrel 2
+Release: %mkrel 3
 Summary: KDE image Interface Plugins
 License: GPLv2+
 Group: System/Libraries
@@ -11,8 +11,8 @@ Epoch: 1
 Requires: mjpegtools
 Requires: vorbis-tools
 Requires: mpg123
-Requires: hugin
 Requires: imagemagick >= 5.5.4
+Suggests: hugin
 BuildRequires: kde4-macros
 BuildRequires: kdelibs4-devel
 BuildRequires: libkipi-devel
