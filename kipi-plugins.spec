@@ -44,10 +44,10 @@ ImagesGallery, HTMLExport, PrintAssistant...
 %{_kde_bindir}/expoblending
 %{_kde_docdir}/%{name}/htmlexport
 %{_kde_docdir}/%{name}/printimages
-%{_kde_datadir}/applications/kde4/scangui.desktop
-%{_kde_datadir}/applications/kde4/dngconverter.desktop
-%{_kde_datadir}/applications/kde4/kipiplugins.desktop
-%{_kde_datadir}/applications/kde4/expoblending.desktop
+%exclude %{_kde_datadir}/applications/kde4/scangui.desktop
+%exclude %{_kde_datadir}/applications/kde4/dngconverter.desktop
+%exclude %{_kde_datadir}/applications/kde4/kipiplugins.desktop
+%exclude %{_kde_datadir}/applications/kde4/expoblending.desktop
 %{_kde_datadir}/apps/*
 %{_kde_libdir}/kde4/kipiplugin_*
 %{_kde_iconsdir}/*/*/*/*
