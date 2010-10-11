@@ -1,10 +1,11 @@
 Name: kipi-plugins
-Version: 1.4.0
-Release: %mkrel 2
+Version: 1.5.0
+Release: %mkrel 1
 Summary: KDE image Interface Plugins
 License: GPLv2+
 Group: System/Libraries
 Source0: http://downloads.sourceforge.net/kipi/%{name}-%{version}.tar.bz2
+Patch0: kipi-plugins-1.5.0-newgdk.patch
 URL: http://www.kipi-plugins.org
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Epoch: 1
@@ -13,7 +14,6 @@ Requires: vorbis-tools
 Requires: mpg123
 Requires: imagemagick >= 5.5.4
 Suggests: hugin
-BuildRequires: kde4-macros
 BuildRequires: kdelibs4-devel
 BuildRequires: libkipi-devel
 BuildRequires: libgpod-devel
@@ -42,12 +42,6 @@ ImagesGallery, HTMLExport, PrintAssistant...
 %{_kde_bindir}/dngconverter
 %{_kde_bindir}/scangui
 %{_kde_bindir}/expoblending
-%{_kde_docdir}/%{name}/htmlexport
-%{_kde_docdir}/%{name}/printimages
-%exclude %{_kde_datadir}/applications/kde4/scangui.desktop
-%exclude %{_kde_datadir}/applications/kde4/dngconverter.desktop
-%exclude %{_kde_datadir}/applications/kde4/kipiplugins.desktop
-%exclude %{_kde_datadir}/applications/kde4/expoblending.desktop
 %{_kde_datadir}/apps/*
 %{_kde_libdir}/kde4/kipiplugin_*
 %{_kde_iconsdir}/*/*/*/*
@@ -89,7 +83,8 @@ Development files for %{name}
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q -n %{name}-%{version} 
+%setup -q -n %{name}-%{version}
+%patch0 -p0
 
 %build
 %cmake_kde4
@@ -107,6 +102,7 @@ install -m644 %{buildroot}/%{_kde_datadir}/apps/kipiplugin_printimages/TEMPLATE_
 #removing wrong files
 rm -f %{buildroot}/%{_kde_datadir}/apps/kipiplugin_htmlexport/THEME_HOWTO
 rm -f %{buildroot}/%{_kde_datadir}/apps/kipiplugin_printimages/TEMPLATE_HOWTO
+rm -f %{buildroot}/%{_kde_datadir}/applications/kde4/*.desktop
 
 %find_lang %name --all-name
 
