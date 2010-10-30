@@ -1,11 +1,12 @@
 Name: kipi-plugins
 Version: 1.5.0
-Release: %mkrel 1
+Release: %mkrel 2
 Summary: KDE image Interface Plugins
 License: GPLv2+
 Group: System/Libraries
 Source0: http://downloads.sourceforge.net/kipi/%{name}-%{version}.tar.bz2
 Patch0: kipi-plugins-1.5.0-newgdk.patch
+Patch1: printimages_crop_error.patch
 URL: http://www.kipi-plugins.org
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Epoch: 1
@@ -85,6 +86,7 @@ Development files for %{name}
 %prep
 %setup -q -n %{name}-%{version}
 %patch0 -p0
+%patch1 -p0
 
 %build
 %cmake_kde4
