@@ -1,5 +1,5 @@
 Name: kipi-plugins
-Version: 1.7.0
+Version: 1.8.0
 Release: %mkrel 1
 Summary: KDE image Interface Plugins
 License: GPLv2+
@@ -39,6 +39,7 @@ ImagesGallery, HTMLExport, PrintAssistant...
 %defattr(-,root,root)
 %doc README
 %{_kde_bindir}/dngconverter
+%{_kde_bindir}/dnginfo
 %{_kde_bindir}/scangui
 %{_kde_bindir}/expoblending
 %{_kde_datadir}/apps/*
