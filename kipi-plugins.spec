@@ -1,6 +1,6 @@
 Name: kipi-plugins
 Version: 1.9.0
-Release: %mkrel 2
+Release: 3
 Summary: KDE image Interface Plugins
 License: GPLv2+
 Group: System/Libraries
@@ -55,7 +55,6 @@ ImagesGallery, HTMLExport, PrintAssistant...
 %package -n %lib_name
 Summary:	Library files for %{name}
 Group:		System/Libraries
-Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts: %{_lib}kipi-plugins0
 
 %description -n %lib_name
