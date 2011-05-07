@@ -6,7 +6,6 @@ License: GPLv2+
 Group: System/Libraries
 Source0: http://downloads.sourceforge.net/kipi/%{name}-%{version}.tar.bz2
 URL: http://www.kipi-plugins.org
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Epoch: 1
 Requires: mjpegtools
 Requires: vorbis-tools
@@ -36,7 +35,6 @@ for additional functionality  such as: RawConverter, SlideShow,
 ImagesGallery, HTMLExport, PrintAssistant...
 
 %files -f %name.lang
-%defattr(-,root,root)
 %doc README
 %{_kde_bindir}/dngconverter
 %{_kde_bindir}/dnginfo
@@ -61,7 +59,6 @@ Conflicts: %{_lib}kipi-plugins0
 Library files for %{name}
 
 %files -n %lib_name
-%defattr(-,root,root)
 %{_kde_libdir}/libkipiplugins.so.%{kipiplugins_major}*
 
 #----------------------------------------------------------------------------
@@ -76,20 +73,18 @@ Obsoletes: %{_lib}kipi-plugins-devel < 1:0.2.0
 Development files for %{name}
 
 %files devel
-%defattr(-,root,root)
 %{_kde_libdir}/*.so
 
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 
 %build
 %cmake_kde4
 %make
 
 %install
-rm -rf %buildroot
 %makeinstall_std -C build
 
 install -d %{buildroot}/%{_kde_datadir}/doc/%{name}/htmlexport/
@@ -103,8 +98,3 @@ rm -f %{buildroot}/%{_kde_datadir}/apps/kipiplugin_printimages/TEMPLATE_HOWTO
 rm -f %{buildroot}/%{_kde_datadir}/applications/kde4/*.desktop
 
 %find_lang %name --all-name
-
-%clean
-rm -rf %buildroot
-
-
