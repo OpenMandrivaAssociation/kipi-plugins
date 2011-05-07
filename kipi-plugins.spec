@@ -69,7 +69,7 @@ Library files for %{name}
 %package devel
 Summary: Development files for %{name}
 Group: Development/C
-Requires: %{lib_name} = %{epoch}:%{version}-%{release}
+Requires: %{lib_name} = %{EVRD}
 Obsoletes: %{_lib}kipi-plugins-devel < 1:0.2.0
 
 %description devel
