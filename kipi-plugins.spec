@@ -1,6 +1,6 @@
 Name: kipi-plugins
 Version: 1.9.0
-Release: 3
+Release: 4
 Summary: KDE image Interface Plugins
 License: GPLv2+
 Group: System/Libraries
