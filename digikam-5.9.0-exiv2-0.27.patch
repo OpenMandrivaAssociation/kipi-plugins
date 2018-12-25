@@ -1,0 +1,12 @@
+diff -up digikam-5.9.0/core/cmake/modules/FindExiv2.cmake.omv~ digikam-5.9.0/core/cmake/modules/FindExiv2.cmake
+--- digikam-5.9.0/core/cmake/modules/FindExiv2.cmake.omv~	2018-12-25 13:54:47.385043985 +0100
++++ digikam-5.9.0/core/cmake/modules/FindExiv2.cmake	2018-12-25 13:55:27.120601329 +0100
+@@ -54,7 +54,7 @@ find_library(EXIV2_LIBRARY NAMES exiv2 l
+ 
+ # Get the version number from exiv2/version.hpp and store it in the cache:
+ if(EXIV2_INCLUDE_DIR  AND NOT  EXIV2_VERSION)
+-  file(READ ${EXIV2_INCLUDE_DIR}/exiv2/version.hpp EXIV2_VERSION_CONTENT)
++  file(READ ${EXIV2_INCLUDE_DIR}/exiv2/exv_conf.h EXIV2_VERSION_CONTENT)
+   string(REGEX MATCH "#define EXIV2_MAJOR_VERSION +\\( *([0-9]+) *\\)"  _dummy "${EXIV2_VERSION_CONTENT}")
+   set(EXIV2_VERSION_MAJOR "${CMAKE_MATCH_1}")
+ 
