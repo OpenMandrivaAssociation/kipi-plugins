@@ -14,7 +14,7 @@ Release:	1
 License:	GPLv2+
 Group:		Graphics
 Source0:	http://download.kde.org/stable/%{name}/%{name}-%{version}.tar.xz
-Patch0:		digikam-5.9.0-exiv2-0.27.patch
+#Patch0:		digikam-5.9.0-exiv2-0.27.patch
 Suggests:	kipi-plugins-dlna
 Suggests:	kipi-plugins-dropbox
 Suggests:	kipi-plugins-jalbum
