@@ -507,11 +507,10 @@ A tool to export images to a remote Yandex.Fotki web service.
 	-DENABLE_KFILEMETADATASUPPORT:BOOL=ON \
 	-DENABLE_MEDIAPLAYER:BOOL=ON
 
-%make_build -C extra/kipi-plugins
+%make_build
 
 %install
-%make_install -C build/extra/kipi-plugins
-%make_install -C build/po
+%make_install
 
 # PO files for stuff that isn't part of kipi-plugins
 rm -f %{buildroot}%{_kde5_datadir}/locale/*/LC_MESSAGES/digikam.mo
