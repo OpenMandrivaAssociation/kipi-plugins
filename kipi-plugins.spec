@@ -9,8 +9,8 @@ Name:		kipi-plugins
 Summary:	KDE Image Plugin Interface plugins
 Url:		https://projects.kde.org/projects/extragear/graphics/kipi-plugins
 Epoch:		2
-Version:	5.9.0
-Release:	4
+Version:	5.9.1
+Release:	1
 License:	GPLv2+
 Group:		Graphics
 Source0:	http://download.kde.org/stable/digikam/digikam-%{version}.tar.xz
