@@ -13,7 +13,7 @@ Version:	5.9.1
 Release:	1
 License:	GPLv2+
 Group:		Graphics
-Source0:	http://download.kde.org/stable/digikam/digikam-%{version}.tar.xz
+Source0:	http://download.kde.org/stable/%{name}/%{name}-%{version}.tar.xz
 Patch0:		digikam-5.9.0-exiv2-0.27.patch
 Suggests:	kipi-plugins-dlna
 Suggests:	kipi-plugins-dropbox
@@ -486,7 +486,7 @@ A tool to export images to a remote Yandex.Fotki web service.
 #-----------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n digikam-%{version}
+%autosetup -p1
 
 %build
 # (tpg) upstream ships own libraw library instead of using system-wide libraw
@@ -495,8 +495,8 @@ A tool to export images to a remote Yandex.Fotki web service.
 # /usr/bin/ld: ../libs/rawengine/libraw/liblibraw.a(libraw_cxx.cpp.o): previous definition here
 # /builddir/build/BUILD/digikam-5.5.0/core/libs/rawengine/libraw/src/libraw_xtrans_compressed.cpp:130: error: undefined reference to '__kmpc_global_thread_num'
 # try to build with GCC because of above issue
-export CC=gcc
-export CXX=g++
+#export CC=gcc
+#export CXX=g++
 
 %cmake_kde5 -G "Unix Makefiles" \
 	-DENABLE_OPENCV3:BOOL=ON \
