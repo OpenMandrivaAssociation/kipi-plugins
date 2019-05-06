@@ -2,9 +2,6 @@
 %bcond_with wikimedia
 %bcond_with vkontakte
 
-%define _disable_lto 1
-%define _disable_ld_no_undefined 1
-
 Name:		kipi-plugins
 Summary:	KDE Image Plugin Interface plugins
 Url:		https://projects.kde.org/projects/extragear/graphics/kipi-plugins
@@ -510,7 +507,7 @@ A tool to export images to a remote Yandex.Fotki web service.
 %make_build
 
 %install
-%make_install
+%make_install -C build
 
 # PO files for stuff that isn't part of kipi-plugins
 rm -f %{buildroot}%{_kde5_datadir}/locale/*/LC_MESSAGES/digikam.mo
