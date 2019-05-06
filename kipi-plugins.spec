@@ -193,7 +193,7 @@ Requires:	kipi-common
 %description jalbum
 A tool to export images to a remote jAlbum.
 
-%files jalbum
+%files jalbum -f kipiplugin_jalbum.lang
 %{_qt5_plugindir}/kipiplugin_jalbum.so
 %{_iconsdir}/hicolor/*/apps/kipi-jalbum.png
 %{_kde5_services}/kipiplugin_jalbum.desktop
@@ -568,5 +568,7 @@ rm -f %{buildroot}%{_kde5_datadir}/locale/*/LC_MESSAGES/libkvkontakte.mo
 %find_lang kipiplugin_vkontakte || touch kipiplugin_vkontakte.lang
 %find_lang kipiplugin_wikimedia || touch kipiplugin_wikimedia.lang
 %find_lang kipiplugin_yandexfotki || touch kipiplugin_yandexfotki.lang
+%find_lang kipiplugin_mediawiki || touch kipiplugin_mediawiki.lang
+%find_lang kipiplugin_jalbum || kipiplugin_jalbum.lang
 %find_lang libkgeomap || touch libkgeomap.lang
 %find_lang libkvkontakte || touch libkvkontakte.lang
