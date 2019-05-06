@@ -147,7 +147,7 @@ for additional functionality such as: RawConverter, SlideShow,
 ImagesGallery, HTMLExport, PrintAssistant...
 
 %files -f kipi-plugins.lang
-%doc extra/kipi-plugins/AUTHORS extra/kipi-plugins/COPYING  extra/kipi-plugins/README extra/kipi-plugins/TODO extra/kipi-plugins/NEWS
+%doc AUTHORS COPYING README TODO NEWS
 %{_kde5_applicationsdir}/kipiplugins.desktop
 
 #-----------------------------------------------------------------------
