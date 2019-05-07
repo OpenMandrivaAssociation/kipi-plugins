@@ -457,7 +457,7 @@ Requires:	kipi-common
 %description wikimedia
 A tool to export images to a remote MediaWiki site
 
-%files wikimedia -f kipiplugin_wikimedia.lang
+%files wikimedia -f kipiplugin_mediawiki.lang
 %{_kde5_datadir}/kxmlgui5/kipi/kipiplugin_wikimediaui.rc
 %{_qt5_plugindir}/kipiplugin_wikimedia.so
 %{_kde5_services}/kipiplugin_wikimedia.desktop
@@ -520,7 +520,7 @@ rm -f %{buildroot}%{_libdir}/libKF5kipiplugins.so
 
 rm -f %{buildroot}%{_kde5_datadir}/locale/*/LC_MESSAGES/kipiplugin_photivointegration.mo
 %if %{without wikimedia}
-rm -f %{buildroot}%{_kde5_datadir}/locale/*/LC_MESSAGES/kipiplugin_wikimedia.mo
+rm -f %{buildroot}%{_kde5_datadir}/locale/*/LC_MESSAGES/kipiplugin_mediawiki.mo
 %endif
 %if %{without vkontakte}
 rm -f %{buildroot}%{_kde5_datadir}/locale/*/LC_MESSAGES/kipiplugin_vkontakte.mo
@@ -566,7 +566,6 @@ rm -f %{buildroot}%{_kde5_datadir}/locale/*/LC_MESSAGES/libkvkontakte.mo
 %find_lang kipiplugin_timeadjust || touch kipiplugin_timeadjust.lang
 %find_lang kipiplugin_videoslideshow || touch kipiplugin_videoslideshow.lang
 %find_lang kipiplugin_vkontakte || touch kipiplugin_vkontakte.lang
-%find_lang kipiplugin_wikimedia || touch kipiplugin_wikimedia.lang
 %find_lang kipiplugin_yandexfotki || touch kipiplugin_yandexfotki.lang
 %find_lang kipiplugin_mediawiki || touch kipiplugin_mediawiki.lang
 %find_lang kipiplugin_jalbum || kipiplugin_jalbum.lang
