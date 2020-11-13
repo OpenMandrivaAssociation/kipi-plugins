@@ -64,7 +64,7 @@ BuildRequires:	pkgconfig(libgpod-1.0)
 BuildRequires:	pkgconfig(libpgf)
 BuildRequires:	pkgconfig(libxslt)
 BuildRequires:	pkgconfig(lqr-1) >= 0.4.0
-BuildRequires:	pkgconfig(opencv)
+BuildRequires:	pkgconfig(opencv4)
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(exiv2)
 BuildRequires:	pkgconfig(xrandr)
@@ -486,15 +486,6 @@ A tool to export images to a remote Yandex.Fotki web service.
 %autosetup -p1
 
 %build
-# (tpg) upstream ships own libraw library instead of using system-wide libraw
-# make[2]: Leaving directory '/builddir/build/BUILD/digikam-5.5.0/build'
-# /usr/bin/ld: warning: ../libs/rawengine/libraw/liblibraw.a(demosaic_packs.cpp.o): multiple common of '.gomp_critical_user_.var'
-# /usr/bin/ld: ../libs/rawengine/libraw/liblibraw.a(libraw_cxx.cpp.o): previous definition here
-# /builddir/build/BUILD/digikam-5.5.0/core/libs/rawengine/libraw/src/libraw_xtrans_compressed.cpp:130: error: undefined reference to '__kmpc_global_thread_num'
-# try to build with GCC because of above issue
-#export CC=gcc
-#export CXX=g++
-
 %cmake_kde5 -G "Unix Makefiles" \
 	-DENABLE_OPENCV3:BOOL=ON \
 	-DENABLE_MYSQLSUPPORT:BOOL=ON \
