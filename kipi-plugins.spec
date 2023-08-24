@@ -2,21 +2,27 @@
 %bcond_with wikimedia
 %bcond_with vkontakte
 
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Name:		kipi-plugins
 Summary:	KDE Image Plugin Interface plugins
 Url:		https://projects.kde.org/projects/extragear/graphics/kipi-plugins
 Epoch:		2
-Version:	5.9.1
-Release:	4
+Version:	23.08.0
+Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphics
-Source0:	http://download.kde.org/stable/%{name}/%{name}-%{version}.tar.xz
+%if 0%{?git:1}
+Source0:        https://invent.kde.org/plasma-mobile/%{name}/-/archive/master/%{name}-master.tar.bz2
+%else
+Source0:        https://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
+%endif
 #Patch0:		digikam-5.9.0-exiv2-0.27.patch
 Suggests:	kipi-plugins-dlna
 Suggests:	kipi-plugins-dropbox
 Suggests:	kipi-plugins-jalbum
 Suggests:	kipi-plugins-facebook
-Suggests:	kipi-plugins-flashexport
+# Removed in 23.08.0
+Obsoletes:	kipi-plugins-flashexport < %{EVRD}
 Suggests:	kipi-plugins-flickr
 Suggests:	kipi-plugins-googleservices
 Suggests:	kipi-plugins-imageshack
@@ -149,10 +155,11 @@ ImagesGallery, HTMLExport, PrintAssistant...
 %files -f kipi-plugins.lang
 %doc AUTHORS COPYING README TODO NEWS
 %{_kde5_applicationsdir}/kipiplugins.desktop
+%{_datadir}/metainfo/org.kde.kipi_plugins.metainfo.xml
 
 #-----------------------------------------------------------------------
 
-%define libkipiplugins_major %{version}
+%define libkipiplugins_major 5.9.1
 %define libkipiplugins %mklibname KF5kipiplugins %{libkipiplugins_major}
 
 %package -n %{libkipiplugins}
@@ -216,25 +223,6 @@ A tool to import/export images to/from a remote Facebook web service.
 %{_qt5_plugindir}/kipiplugin_facebook.so
 %{_kde5_services}/kipiplugin_facebook.desktop
 %{_kde5_iconsdir}/hicolor/*/apps/kipi-facebook.*
-
-#-----------------------------------------------------------------------
-
-%package flashexport
-Summary:	Flash export Kipi Plugin
-Group:		System/Libraries
-Conflicts:	kipi-plugins < 1:1.8.0-1
-Requires:	libkdcraw-common
-Requires:	kipi-common
-
-%description flashexport
-A tool to export images to Flash.
-
-%files flashexport -f kipiplugin_flashexport.lang
-%{_kde5_datadir}/kxmlgui5/kipi/kipiplugin_flashexportui.rc
-%{_kde5_datadir}/kipiplugin_flashexport
-%{_qt5_plugindir}/kipiplugin_flashexport.so
-%{_kde5_services}/kipiplugin_flashexport.desktop
-%{_kde5_iconsdir}/hicolor/*/apps/kipi-flash.*
 
 #-----------------------------------------------------------------------
 
@@ -528,7 +516,6 @@ rm -f %{buildroot}%{_kde5_datadir}/locale/*/LC_MESSAGES/libkvkontakte.mo
 %find_lang kipiplugin_dngconverter || touch kipiplugin_dngconverter.lang
 %find_lang kipiplugin_dropbox || touch kipiplugin_dropbox.lang
 %find_lang kipiplugin_facebook || touch kipiplugin_facebook.lang
-%find_lang kipiplugin_flashexport || touch kipiplugin_flashexport.lang
 %find_lang kipiplugin_flickr || touch kipiplugin_flickr.lang
 %find_lang kipiplugin_galleryexport || touch kipiplugin_galleryexport.lang
 %find_lang kipiplugin_googleservices || touch kipiplugin_googleservices.lang
