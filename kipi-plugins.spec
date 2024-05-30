@@ -8,7 +8,7 @@ Summary:	KDE Image Plugin Interface plugins
 Url:		https://projects.kde.org/projects/extragear/graphics/kipi-plugins
 Epoch:		2
 Version:	23.08.4
-Release:	%{?git:0.%{git}.}3
+Release:	%{?git:0.%{git}.}4
 License:	GPLv2+
 Group:		Graphics
 %if 0%{?git:1}
